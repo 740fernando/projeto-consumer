@@ -15,8 +15,8 @@ public class Program {
         list.add(new Product("MOUSE",30.00));
 
 
-        //Referencia ao metodo estatico
-        list.forEach(Product::staticPriceUpdate);
+        //Referencia ao metodo nao estatico
+        list.forEach(Product::nonStaticPriceUpdate);
 
         //utiliza um reference metod
         list.forEach(System.out::println);
