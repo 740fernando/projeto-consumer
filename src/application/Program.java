@@ -4,6 +4,7 @@ import entities.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Program {
     public static void main(String args[]){
@@ -14,9 +15,12 @@ public class Program {
         list.add(new Product("Geladeira",800.00));
         list.add(new Product("MOUSE",30.00));
 
+        double factor= 1.1;
+        Consumer<Product> cons = p->
+            p.setPrice(p.getPrice()*factor);
+        ;
 
-        //Referencia ao metodo nao estatico
-        list.forEach(Product::nonStaticPriceUpdate);
+        list.forEach(cons);
 
         //utiliza um reference metod
         list.forEach(System.out::println);
