@@ -1,7 +1,6 @@
 package application;
 
 import entities.Product;
-import util.PriceUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,9 @@ public class Program {
         list.add(new Product("Geladeira",800.00));
         list.add(new Product("MOUSE",30.00));
 
-        //atualiza os precos, percorre a lista, aplicando o consumer para cada elemento da lista
-        list.forEach(new PriceUpdate());
+
+        //Referencia ao metodo estatico
+        list.forEach(Product::staticPriceUpdate);
 
         //utiliza um reference metod
         list.forEach(System.out::println);
