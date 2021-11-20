@@ -15,12 +15,11 @@ public class Program {
         list.add(new Product("Geladeira",800.00));
         list.add(new Product("MOUSE",30.00));
 
-        double factor= 1.1;
-        Consumer<Product> cons = p->
-            p.setPrice(p.getPrice()*factor);
-        ;
+        double factor = 1.1;
 
-        list.forEach(cons);
+
+        list.forEach( p->
+                p.setPrice(p.getPrice()*factor));
 
         //utiliza um reference metod
         list.forEach(System.out::println);
